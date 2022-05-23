@@ -18,35 +18,159 @@ public final class MyServiceGrpc {
   public static final String SERVICE_NAME = "MyService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<net.devh.boot.grpc.examples.lib.HelloRequest,
-      net.devh.boot.grpc.examples.lib.HelloReply> getSayHelloMethod;
+  private static volatile io.grpc.MethodDescriptor<net.devh.boot.grpc.examples.lib.Empty,
+      net.devh.boot.grpc.examples.lib.Response> getPingMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "SayHello",
-      requestType = net.devh.boot.grpc.examples.lib.HelloRequest.class,
-      responseType = net.devh.boot.grpc.examples.lib.HelloReply.class,
+      fullMethodName = SERVICE_NAME + '/' + "ping",
+      requestType = net.devh.boot.grpc.examples.lib.Empty.class,
+      responseType = net.devh.boot.grpc.examples.lib.Response.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<net.devh.boot.grpc.examples.lib.HelloRequest,
-      net.devh.boot.grpc.examples.lib.HelloReply> getSayHelloMethod() {
-    io.grpc.MethodDescriptor<net.devh.boot.grpc.examples.lib.HelloRequest, net.devh.boot.grpc.examples.lib.HelloReply> getSayHelloMethod;
-    if ((getSayHelloMethod = MyServiceGrpc.getSayHelloMethod) == null) {
+  public static io.grpc.MethodDescriptor<net.devh.boot.grpc.examples.lib.Empty,
+      net.devh.boot.grpc.examples.lib.Response> getPingMethod() {
+    io.grpc.MethodDescriptor<net.devh.boot.grpc.examples.lib.Empty, net.devh.boot.grpc.examples.lib.Response> getPingMethod;
+    if ((getPingMethod = MyServiceGrpc.getPingMethod) == null) {
       synchronized (MyServiceGrpc.class) {
-        if ((getSayHelloMethod = MyServiceGrpc.getSayHelloMethod) == null) {
-          MyServiceGrpc.getSayHelloMethod = getSayHelloMethod =
-              io.grpc.MethodDescriptor.<net.devh.boot.grpc.examples.lib.HelloRequest, net.devh.boot.grpc.examples.lib.HelloReply>newBuilder()
+        if ((getPingMethod = MyServiceGrpc.getPingMethod) == null) {
+          MyServiceGrpc.getPingMethod = getPingMethod =
+              io.grpc.MethodDescriptor.<net.devh.boot.grpc.examples.lib.Empty, net.devh.boot.grpc.examples.lib.Response>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SayHello"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ping"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  net.devh.boot.grpc.examples.lib.HelloRequest.getDefaultInstance()))
+                  net.devh.boot.grpc.examples.lib.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  net.devh.boot.grpc.examples.lib.HelloReply.getDefaultInstance()))
-              .setSchemaDescriptor(new MyServiceMethodDescriptorSupplier("SayHello"))
+                  net.devh.boot.grpc.examples.lib.Response.getDefaultInstance()))
+              .setSchemaDescriptor(new MyServiceMethodDescriptorSupplier("ping"))
               .build();
         }
       }
     }
-    return getSayHelloMethod;
+    return getPingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<net.devh.boot.grpc.examples.lib.Request,
+      net.devh.boot.grpc.examples.lib.Response> getGetMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "get",
+      requestType = net.devh.boot.grpc.examples.lib.Request.class,
+      responseType = net.devh.boot.grpc.examples.lib.Response.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<net.devh.boot.grpc.examples.lib.Request,
+      net.devh.boot.grpc.examples.lib.Response> getGetMethod() {
+    io.grpc.MethodDescriptor<net.devh.boot.grpc.examples.lib.Request, net.devh.boot.grpc.examples.lib.Response> getGetMethod;
+    if ((getGetMethod = MyServiceGrpc.getGetMethod) == null) {
+      synchronized (MyServiceGrpc.class) {
+        if ((getGetMethod = MyServiceGrpc.getGetMethod) == null) {
+          MyServiceGrpc.getGetMethod = getGetMethod =
+              io.grpc.MethodDescriptor.<net.devh.boot.grpc.examples.lib.Request, net.devh.boot.grpc.examples.lib.Response>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "get"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  net.devh.boot.grpc.examples.lib.Request.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  net.devh.boot.grpc.examples.lib.Response.getDefaultInstance()))
+              .setSchemaDescriptor(new MyServiceMethodDescriptorSupplier("get"))
+              .build();
+        }
+      }
+    }
+    return getGetMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<net.devh.boot.grpc.examples.lib.Request,
+      net.devh.boot.grpc.examples.lib.Response> getPostMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "post",
+      requestType = net.devh.boot.grpc.examples.lib.Request.class,
+      responseType = net.devh.boot.grpc.examples.lib.Response.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<net.devh.boot.grpc.examples.lib.Request,
+      net.devh.boot.grpc.examples.lib.Response> getPostMethod() {
+    io.grpc.MethodDescriptor<net.devh.boot.grpc.examples.lib.Request, net.devh.boot.grpc.examples.lib.Response> getPostMethod;
+    if ((getPostMethod = MyServiceGrpc.getPostMethod) == null) {
+      synchronized (MyServiceGrpc.class) {
+        if ((getPostMethod = MyServiceGrpc.getPostMethod) == null) {
+          MyServiceGrpc.getPostMethod = getPostMethod =
+              io.grpc.MethodDescriptor.<net.devh.boot.grpc.examples.lib.Request, net.devh.boot.grpc.examples.lib.Response>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "post"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  net.devh.boot.grpc.examples.lib.Request.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  net.devh.boot.grpc.examples.lib.Response.getDefaultInstance()))
+              .setSchemaDescriptor(new MyServiceMethodDescriptorSupplier("post"))
+              .build();
+        }
+      }
+    }
+    return getPostMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<net.devh.boot.grpc.examples.lib.Request,
+      net.devh.boot.grpc.examples.lib.Response> getPutMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "put",
+      requestType = net.devh.boot.grpc.examples.lib.Request.class,
+      responseType = net.devh.boot.grpc.examples.lib.Response.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<net.devh.boot.grpc.examples.lib.Request,
+      net.devh.boot.grpc.examples.lib.Response> getPutMethod() {
+    io.grpc.MethodDescriptor<net.devh.boot.grpc.examples.lib.Request, net.devh.boot.grpc.examples.lib.Response> getPutMethod;
+    if ((getPutMethod = MyServiceGrpc.getPutMethod) == null) {
+      synchronized (MyServiceGrpc.class) {
+        if ((getPutMethod = MyServiceGrpc.getPutMethod) == null) {
+          MyServiceGrpc.getPutMethod = getPutMethod =
+              io.grpc.MethodDescriptor.<net.devh.boot.grpc.examples.lib.Request, net.devh.boot.grpc.examples.lib.Response>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "put"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  net.devh.boot.grpc.examples.lib.Request.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  net.devh.boot.grpc.examples.lib.Response.getDefaultInstance()))
+              .setSchemaDescriptor(new MyServiceMethodDescriptorSupplier("put"))
+              .build();
+        }
+      }
+    }
+    return getPutMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<net.devh.boot.grpc.examples.lib.Request,
+      net.devh.boot.grpc.examples.lib.Response> getDeleteMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "delete",
+      requestType = net.devh.boot.grpc.examples.lib.Request.class,
+      responseType = net.devh.boot.grpc.examples.lib.Response.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<net.devh.boot.grpc.examples.lib.Request,
+      net.devh.boot.grpc.examples.lib.Response> getDeleteMethod() {
+    io.grpc.MethodDescriptor<net.devh.boot.grpc.examples.lib.Request, net.devh.boot.grpc.examples.lib.Response> getDeleteMethod;
+    if ((getDeleteMethod = MyServiceGrpc.getDeleteMethod) == null) {
+      synchronized (MyServiceGrpc.class) {
+        if ((getDeleteMethod = MyServiceGrpc.getDeleteMethod) == null) {
+          MyServiceGrpc.getDeleteMethod = getDeleteMethod =
+              io.grpc.MethodDescriptor.<net.devh.boot.grpc.examples.lib.Request, net.devh.boot.grpc.examples.lib.Response>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "delete"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  net.devh.boot.grpc.examples.lib.Request.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  net.devh.boot.grpc.examples.lib.Response.getDefaultInstance()))
+              .setSchemaDescriptor(new MyServiceMethodDescriptorSupplier("delete"))
+              .build();
+        }
+      }
+    }
+    return getDeleteMethod;
   }
 
   /**
@@ -105,20 +229,76 @@ public final class MyServiceGrpc {
      * Sends a greeting
      * </pre>
      */
-    public void sayHello(net.devh.boot.grpc.examples.lib.HelloRequest request,
-        io.grpc.stub.StreamObserver<net.devh.boot.grpc.examples.lib.HelloReply> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSayHelloMethod(), responseObserver);
+    public void ping(net.devh.boot.grpc.examples.lib.Empty request,
+        io.grpc.stub.StreamObserver<net.devh.boot.grpc.examples.lib.Response> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPingMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void get(net.devh.boot.grpc.examples.lib.Request request,
+        io.grpc.stub.StreamObserver<net.devh.boot.grpc.examples.lib.Response> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void post(net.devh.boot.grpc.examples.lib.Request request,
+        io.grpc.stub.StreamObserver<net.devh.boot.grpc.examples.lib.Response> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPostMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void put(net.devh.boot.grpc.examples.lib.Request request,
+        io.grpc.stub.StreamObserver<net.devh.boot.grpc.examples.lib.Response> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPutMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void delete(net.devh.boot.grpc.examples.lib.Request request,
+        io.grpc.stub.StreamObserver<net.devh.boot.grpc.examples.lib.Response> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            getSayHelloMethod(),
+            getPingMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                net.devh.boot.grpc.examples.lib.HelloRequest,
-                net.devh.boot.grpc.examples.lib.HelloReply>(
-                  this, METHODID_SAY_HELLO)))
+                net.devh.boot.grpc.examples.lib.Empty,
+                net.devh.boot.grpc.examples.lib.Response>(
+                  this, METHODID_PING)))
+          .addMethod(
+            getGetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                net.devh.boot.grpc.examples.lib.Request,
+                net.devh.boot.grpc.examples.lib.Response>(
+                  this, METHODID_GET)))
+          .addMethod(
+            getPostMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                net.devh.boot.grpc.examples.lib.Request,
+                net.devh.boot.grpc.examples.lib.Response>(
+                  this, METHODID_POST)))
+          .addMethod(
+            getPutMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                net.devh.boot.grpc.examples.lib.Request,
+                net.devh.boot.grpc.examples.lib.Response>(
+                  this, METHODID_PUT)))
+          .addMethod(
+            getDeleteMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                net.devh.boot.grpc.examples.lib.Request,
+                net.devh.boot.grpc.examples.lib.Response>(
+                  this, METHODID_DELETE)))
           .build();
     }
   }
@@ -145,10 +325,42 @@ public final class MyServiceGrpc {
      * Sends a greeting
      * </pre>
      */
-    public void sayHello(net.devh.boot.grpc.examples.lib.HelloRequest request,
-        io.grpc.stub.StreamObserver<net.devh.boot.grpc.examples.lib.HelloReply> responseObserver) {
+    public void ping(net.devh.boot.grpc.examples.lib.Empty request,
+        io.grpc.stub.StreamObserver<net.devh.boot.grpc.examples.lib.Response> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getSayHelloMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getPingMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void get(net.devh.boot.grpc.examples.lib.Request request,
+        io.grpc.stub.StreamObserver<net.devh.boot.grpc.examples.lib.Response> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void post(net.devh.boot.grpc.examples.lib.Request request,
+        io.grpc.stub.StreamObserver<net.devh.boot.grpc.examples.lib.Response> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPostMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void put(net.devh.boot.grpc.examples.lib.Request request,
+        io.grpc.stub.StreamObserver<net.devh.boot.grpc.examples.lib.Response> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPutMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void delete(net.devh.boot.grpc.examples.lib.Request request,
+        io.grpc.stub.StreamObserver<net.devh.boot.grpc.examples.lib.Response> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -174,9 +386,37 @@ public final class MyServiceGrpc {
      * Sends a greeting
      * </pre>
      */
-    public net.devh.boot.grpc.examples.lib.HelloReply sayHello(net.devh.boot.grpc.examples.lib.HelloRequest request) {
+    public net.devh.boot.grpc.examples.lib.Response ping(net.devh.boot.grpc.examples.lib.Empty request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getSayHelloMethod(), getCallOptions(), request);
+          getChannel(), getPingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public net.devh.boot.grpc.examples.lib.Response get(net.devh.boot.grpc.examples.lib.Request request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public net.devh.boot.grpc.examples.lib.Response post(net.devh.boot.grpc.examples.lib.Request request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPostMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public net.devh.boot.grpc.examples.lib.Response put(net.devh.boot.grpc.examples.lib.Request request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPutMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public net.devh.boot.grpc.examples.lib.Response delete(net.devh.boot.grpc.examples.lib.Request request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteMethod(), getCallOptions(), request);
     }
   }
 
@@ -202,14 +442,50 @@ public final class MyServiceGrpc {
      * Sends a greeting
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<net.devh.boot.grpc.examples.lib.HelloReply> sayHello(
-        net.devh.boot.grpc.examples.lib.HelloRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<net.devh.boot.grpc.examples.lib.Response> ping(
+        net.devh.boot.grpc.examples.lib.Empty request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getSayHelloMethod(), getCallOptions()), request);
+          getChannel().newCall(getPingMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<net.devh.boot.grpc.examples.lib.Response> get(
+        net.devh.boot.grpc.examples.lib.Request request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<net.devh.boot.grpc.examples.lib.Response> post(
+        net.devh.boot.grpc.examples.lib.Request request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPostMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<net.devh.boot.grpc.examples.lib.Response> put(
+        net.devh.boot.grpc.examples.lib.Request request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPutMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<net.devh.boot.grpc.examples.lib.Response> delete(
+        net.devh.boot.grpc.examples.lib.Request request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteMethod(), getCallOptions()), request);
     }
   }
 
-  private static final int METHODID_SAY_HELLO = 0;
+  private static final int METHODID_PING = 0;
+  private static final int METHODID_GET = 1;
+  private static final int METHODID_POST = 2;
+  private static final int METHODID_PUT = 3;
+  private static final int METHODID_DELETE = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -228,9 +504,25 @@ public final class MyServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_SAY_HELLO:
-          serviceImpl.sayHello((net.devh.boot.grpc.examples.lib.HelloRequest) request,
-              (io.grpc.stub.StreamObserver<net.devh.boot.grpc.examples.lib.HelloReply>) responseObserver);
+        case METHODID_PING:
+          serviceImpl.ping((net.devh.boot.grpc.examples.lib.Empty) request,
+              (io.grpc.stub.StreamObserver<net.devh.boot.grpc.examples.lib.Response>) responseObserver);
+          break;
+        case METHODID_GET:
+          serviceImpl.get((net.devh.boot.grpc.examples.lib.Request) request,
+              (io.grpc.stub.StreamObserver<net.devh.boot.grpc.examples.lib.Response>) responseObserver);
+          break;
+        case METHODID_POST:
+          serviceImpl.post((net.devh.boot.grpc.examples.lib.Request) request,
+              (io.grpc.stub.StreamObserver<net.devh.boot.grpc.examples.lib.Response>) responseObserver);
+          break;
+        case METHODID_PUT:
+          serviceImpl.put((net.devh.boot.grpc.examples.lib.Request) request,
+              (io.grpc.stub.StreamObserver<net.devh.boot.grpc.examples.lib.Response>) responseObserver);
+          break;
+        case METHODID_DELETE:
+          serviceImpl.delete((net.devh.boot.grpc.examples.lib.Request) request,
+              (io.grpc.stub.StreamObserver<net.devh.boot.grpc.examples.lib.Response>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -293,7 +585,11 @@ public final class MyServiceGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new MyServiceFileDescriptorSupplier())
-              .addMethod(getSayHelloMethod())
+              .addMethod(getPingMethod())
+              .addMethod(getGetMethod())
+              .addMethod(getPostMethod())
+              .addMethod(getPutMethod())
+              .addMethod(getDeleteMethod())
               .build();
         }
       }

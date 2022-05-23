@@ -4,30 +4,25 @@
 package net.devh.boot.grpc.examples.lib;
 
 /**
- * <pre>
- * The response message containing the greetings
- * </pre>
- *
- * Protobuf type {@code HelloReply}
+ * Protobuf type {@code Empty}
  */
-public final class HelloReply extends
+public final class Empty extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:HelloReply)
-    HelloReplyOrBuilder {
+    // @@protoc_insertion_point(message_implements:Empty)
+    EmptyOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use HelloReply.newBuilder() to construct.
-  private HelloReply(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use Empty.newBuilder() to construct.
+  private Empty(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private HelloReply() {
-    message_ = "";
+  private Empty() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new HelloReply();
+    return new Empty();
   }
 
   @java.lang.Override
@@ -35,7 +30,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private HelloReply(
+  private Empty(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -53,12 +48,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            message_ = s;
-            break;
-          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -80,53 +69,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return net.devh.boot.grpc.examples.lib.SimpleProto.internal_static_HelloReply_descriptor;
+    return net.devh.boot.grpc.examples.lib.SimpleProto.internal_static_Empty_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return net.devh.boot.grpc.examples.lib.SimpleProto.internal_static_HelloReply_fieldAccessorTable
+    return net.devh.boot.grpc.examples.lib.SimpleProto.internal_static_Empty_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            net.devh.boot.grpc.examples.lib.HelloReply.class, net.devh.boot.grpc.examples.lib.HelloReply.Builder.class);
-  }
-
-  public static final int MESSAGE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object message_;
-  /**
-   * <code>string message = 1;</code>
-   * @return The message.
-   */
-  @java.lang.Override
-  public java.lang.String getMessage() {
-    java.lang.Object ref = message_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      message_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string message = 1;</code>
-   * @return The bytes for message.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getMessageBytes() {
-    java.lang.Object ref = message_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      message_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+            net.devh.boot.grpc.examples.lib.Empty.class, net.devh.boot.grpc.examples.lib.Empty.Builder.class);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -143,9 +94,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, message_);
-    }
     unknownFields.writeTo(output);
   }
 
@@ -155,9 +103,6 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, message_);
-    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -168,13 +113,11 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof net.devh.boot.grpc.examples.lib.HelloReply)) {
+    if (!(obj instanceof net.devh.boot.grpc.examples.lib.Empty)) {
       return super.equals(obj);
     }
-    net.devh.boot.grpc.examples.lib.HelloReply other = (net.devh.boot.grpc.examples.lib.HelloReply) obj;
+    net.devh.boot.grpc.examples.lib.Empty other = (net.devh.boot.grpc.examples.lib.Empty) obj;
 
-    if (!getMessage()
-        .equals(other.getMessage())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -186,76 +129,74 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
-    hash = (53 * hash) + getMessage().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static net.devh.boot.grpc.examples.lib.HelloReply parseFrom(
+  public static net.devh.boot.grpc.examples.lib.Empty parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static net.devh.boot.grpc.examples.lib.HelloReply parseFrom(
+  public static net.devh.boot.grpc.examples.lib.Empty parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static net.devh.boot.grpc.examples.lib.HelloReply parseFrom(
+  public static net.devh.boot.grpc.examples.lib.Empty parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static net.devh.boot.grpc.examples.lib.HelloReply parseFrom(
+  public static net.devh.boot.grpc.examples.lib.Empty parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static net.devh.boot.grpc.examples.lib.HelloReply parseFrom(byte[] data)
+  public static net.devh.boot.grpc.examples.lib.Empty parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static net.devh.boot.grpc.examples.lib.HelloReply parseFrom(
+  public static net.devh.boot.grpc.examples.lib.Empty parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static net.devh.boot.grpc.examples.lib.HelloReply parseFrom(java.io.InputStream input)
+  public static net.devh.boot.grpc.examples.lib.Empty parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static net.devh.boot.grpc.examples.lib.HelloReply parseFrom(
+  public static net.devh.boot.grpc.examples.lib.Empty parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static net.devh.boot.grpc.examples.lib.HelloReply parseDelimitedFrom(java.io.InputStream input)
+  public static net.devh.boot.grpc.examples.lib.Empty parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static net.devh.boot.grpc.examples.lib.HelloReply parseDelimitedFrom(
+  public static net.devh.boot.grpc.examples.lib.Empty parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static net.devh.boot.grpc.examples.lib.HelloReply parseFrom(
+  public static net.devh.boot.grpc.examples.lib.Empty parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static net.devh.boot.grpc.examples.lib.HelloReply parseFrom(
+  public static net.devh.boot.grpc.examples.lib.Empty parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -268,7 +209,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(net.devh.boot.grpc.examples.lib.HelloReply prototype) {
+  public static Builder newBuilder(net.devh.boot.grpc.examples.lib.Empty prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -284,30 +225,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * The response message containing the greetings
-   * </pre>
-   *
-   * Protobuf type {@code HelloReply}
+   * Protobuf type {@code Empty}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:HelloReply)
-      net.devh.boot.grpc.examples.lib.HelloReplyOrBuilder {
+      // @@protoc_insertion_point(builder_implements:Empty)
+      net.devh.boot.grpc.examples.lib.EmptyOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return net.devh.boot.grpc.examples.lib.SimpleProto.internal_static_HelloReply_descriptor;
+      return net.devh.boot.grpc.examples.lib.SimpleProto.internal_static_Empty_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return net.devh.boot.grpc.examples.lib.SimpleProto.internal_static_HelloReply_fieldAccessorTable
+      return net.devh.boot.grpc.examples.lib.SimpleProto.internal_static_Empty_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              net.devh.boot.grpc.examples.lib.HelloReply.class, net.devh.boot.grpc.examples.lib.HelloReply.Builder.class);
+              net.devh.boot.grpc.examples.lib.Empty.class, net.devh.boot.grpc.examples.lib.Empty.Builder.class);
     }
 
-    // Construct using net.devh.boot.grpc.examples.lib.HelloReply.newBuilder()
+    // Construct using net.devh.boot.grpc.examples.lib.Empty.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -325,25 +262,23 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      message_ = "";
-
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return net.devh.boot.grpc.examples.lib.SimpleProto.internal_static_HelloReply_descriptor;
+      return net.devh.boot.grpc.examples.lib.SimpleProto.internal_static_Empty_descriptor;
     }
 
     @java.lang.Override
-    public net.devh.boot.grpc.examples.lib.HelloReply getDefaultInstanceForType() {
-      return net.devh.boot.grpc.examples.lib.HelloReply.getDefaultInstance();
+    public net.devh.boot.grpc.examples.lib.Empty getDefaultInstanceForType() {
+      return net.devh.boot.grpc.examples.lib.Empty.getDefaultInstance();
     }
 
     @java.lang.Override
-    public net.devh.boot.grpc.examples.lib.HelloReply build() {
-      net.devh.boot.grpc.examples.lib.HelloReply result = buildPartial();
+    public net.devh.boot.grpc.examples.lib.Empty build() {
+      net.devh.boot.grpc.examples.lib.Empty result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -351,9 +286,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public net.devh.boot.grpc.examples.lib.HelloReply buildPartial() {
-      net.devh.boot.grpc.examples.lib.HelloReply result = new net.devh.boot.grpc.examples.lib.HelloReply(this);
-      result.message_ = message_;
+    public net.devh.boot.grpc.examples.lib.Empty buildPartial() {
+      net.devh.boot.grpc.examples.lib.Empty result = new net.devh.boot.grpc.examples.lib.Empty(this);
       onBuilt();
       return result;
     }
@@ -392,20 +326,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof net.devh.boot.grpc.examples.lib.HelloReply) {
-        return mergeFrom((net.devh.boot.grpc.examples.lib.HelloReply)other);
+      if (other instanceof net.devh.boot.grpc.examples.lib.Empty) {
+        return mergeFrom((net.devh.boot.grpc.examples.lib.Empty)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(net.devh.boot.grpc.examples.lib.HelloReply other) {
-      if (other == net.devh.boot.grpc.examples.lib.HelloReply.getDefaultInstance()) return this;
-      if (!other.getMessage().isEmpty()) {
-        message_ = other.message_;
-        onChanged();
-      }
+    public Builder mergeFrom(net.devh.boot.grpc.examples.lib.Empty other) {
+      if (other == net.devh.boot.grpc.examples.lib.Empty.getDefaultInstance()) return this;
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -421,93 +351,17 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      net.devh.boot.grpc.examples.lib.HelloReply parsedMessage = null;
+      net.devh.boot.grpc.examples.lib.Empty parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (net.devh.boot.grpc.examples.lib.HelloReply) e.getUnfinishedMessage();
+        parsedMessage = (net.devh.boot.grpc.examples.lib.Empty) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
           mergeFrom(parsedMessage);
         }
       }
-      return this;
-    }
-
-    private java.lang.Object message_ = "";
-    /**
-     * <code>string message = 1;</code>
-     * @return The message.
-     */
-    public java.lang.String getMessage() {
-      java.lang.Object ref = message_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        message_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string message = 1;</code>
-     * @return The bytes for message.
-     */
-    public com.google.protobuf.ByteString
-        getMessageBytes() {
-      java.lang.Object ref = message_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        message_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string message = 1;</code>
-     * @param value The message to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMessage(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      message_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string message = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearMessage() {
-      
-      message_ = getDefaultInstance().getMessage();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string message = 1;</code>
-     * @param value The bytes for message to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMessageBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      message_ = value;
-      onChanged();
       return this;
     }
     @java.lang.Override
@@ -523,41 +377,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:HelloReply)
+    // @@protoc_insertion_point(builder_scope:Empty)
   }
 
-  // @@protoc_insertion_point(class_scope:HelloReply)
-  private static final net.devh.boot.grpc.examples.lib.HelloReply DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:Empty)
+  private static final net.devh.boot.grpc.examples.lib.Empty DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new net.devh.boot.grpc.examples.lib.HelloReply();
+    DEFAULT_INSTANCE = new net.devh.boot.grpc.examples.lib.Empty();
   }
 
-  public static net.devh.boot.grpc.examples.lib.HelloReply getDefaultInstance() {
+  public static net.devh.boot.grpc.examples.lib.Empty getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<HelloReply>
-      PARSER = new com.google.protobuf.AbstractParser<HelloReply>() {
+  private static final com.google.protobuf.Parser<Empty>
+      PARSER = new com.google.protobuf.AbstractParser<Empty>() {
     @java.lang.Override
-    public HelloReply parsePartialFrom(
+    public Empty parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new HelloReply(input, extensionRegistry);
+      return new Empty(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<HelloReply> parser() {
+  public static com.google.protobuf.Parser<Empty> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<HelloReply> getParserForType() {
+  public com.google.protobuf.Parser<Empty> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public net.devh.boot.grpc.examples.lib.HelloReply getDefaultInstanceForType() {
+  public net.devh.boot.grpc.examples.lib.Empty getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
