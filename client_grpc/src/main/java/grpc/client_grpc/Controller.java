@@ -15,6 +15,7 @@ public class Controller {
 
     @GetMapping("/test")
     public String printMessage() {
+        System.out.println("0");
         return grpcClientService.sendMessage("test");
     }
 }

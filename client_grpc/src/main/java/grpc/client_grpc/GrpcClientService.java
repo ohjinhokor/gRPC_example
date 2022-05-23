@@ -15,9 +15,12 @@ public class GrpcClientService {
 
     public String sendMessage(final String name) {
         try {
-            HelloReply helloReply = simpleStub.sayHello(HelloRequest.newBuilder().setName("Bepi").build());
+            System.out.println("1");
+            HelloReply helloReply = simpleStub.sayHello(HelloRequest.newBuilder().setName(name).build());
+            System.out.println("2");
             return helloReply.getMessage();
         } catch (StatusRuntimeException e) {
+            System.out.println("3");
             return "FAILED with " + e.getStatus().getCode().name();
         }
     }
