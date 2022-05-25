@@ -26,6 +26,7 @@ dependencies {
 
 	implementation 'net.devh:grpc-client-spring-boot-starter:2.13.1.RELEASE'
 	implementation files('libs/interface_grpc-0.0.1-SNAPSHOT-plain.jar')
+//	implementation files('libs/shoplive-grpc-0.0.1-SNAPSHOT.jar')
 }
 
 tasks.named('test') {

@@ -14,7 +14,7 @@ public class Controller {
 
     @GetMapping()
     public String grpcGetMethod() {
-        grpcClientService.
+        return grpcClientService.grpcGetMethod();
     }
     // @GetMapping("/test")
     // public String printMessage() {

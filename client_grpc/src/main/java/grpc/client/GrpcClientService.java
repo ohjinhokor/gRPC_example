@@ -1,11 +1,14 @@
 package grpc.client;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.protobuf.ByteString;
 import grpc.bepi.lib.GRequest;
+import grpc.bepi.lib.GResponse;
 import grpc.bepi.lib.RestApiGrpc;
 import net.devh.boot.grpc.client.inject.GrpcClient;
 import org.springframework.stereotype.Service;
 
-import java.util.Map;
+import java.io.IOException;
 
 @Service
 public class GrpcClientService {
@@ -13,9 +16,23 @@ public class GrpcClientService {
     @GrpcClient("grpcService")
     private RestApiGrpc.RestApiBlockingStub stub;
 
-    public String grpcGetMethod(String path, Map<String, String> headers, RequestDto body) {
+    private ObjectMapper objectMapper = new ObjectMapper();
 
-        stub.get(GRequest.newBuilder().setPath("examplePath").setBody())
+
+    public String grpcGetMethod() {
+
+        RequestDto requestDto = new RequestDto();
+        requestDto.setName("bepi");
+        try {
+            String stringRequestDto = objectMapper.writeValueAsString(requestDto);
+            ByteString bytesRequestDto = ByteString.copyFromUtf8(stringRequestDto);
+            GResponse gResponse = stub.get(GRequest.newBuilder().setPath("examplePath").setBody(bytesRequestDto).putHeaders("id", "6").build());
+
+            String responseBody = gResponse.getBody().toStringUtf8();
+            return responseBody;
+        } catch (IOException e) {
+            return "fail";
+        }
     }
     // @GrpcClient("test123")
     // private ShopliveApiGrpc.ShopliveApiBlockingStub stub;
