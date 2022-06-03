@@ -5,6 +5,10 @@ import com.google.protobuf.ByteString;
 import grpc.bepi.lib.GRequest;
 import grpc.bepi.lib.GResponse;
 import grpc.bepi.lib.RestApiGrpc;
+import io.grpc.Channel;
+import io.grpc.ManagedChannelBuilder;
+import io.grpc.netty.shaded.io.grpc.netty.NegotiationType;
+import io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder;
 import net.devh.boot.grpc.client.inject.GrpcClient;
 import org.springframework.stereotype.Service;
 
@@ -13,20 +17,25 @@ import java.io.IOException;
 @Service
 public class GrpcClientService {
 
-    @GrpcClient("grpcService")
+    private Channel channel;
+
     private RestApiGrpc.RestApiBlockingStub stub;
 
     private ObjectMapper objectMapper = new ObjectMapper();
 
-
     public String grpcGetMethod() {
+        channel =
+            // ManagedChannelBuilder.forTarget("localhost" + ":" + 9090).build();
+                NettyChannelBuilder.forAddress("localhost", 9090).negotiationType(NegotiationType.PLAINTEXT)
+                .build();
+        stub = RestApiGrpc.newBlockingStub(channel);
 
         RequestDto requestDto = new RequestDto();
-        requestDto.setName("bepi");
+        requestDto.setName("bepiiii");
         try {
             String stringRequestDto = objectMapper.writeValueAsString(requestDto);
             ByteString bytesRequestDto = ByteString.copyFromUtf8(stringRequestDto);
-            GResponse gResponse = stub.get(GRequest.newBuilder().setPath("examplePath").setBody(bytesRequestDto).putHeaders("id", "6").build());
+            GResponse gResponse = stub.get(GRequest.newBuilder().setPath("examplePath").setBody(bytesRequestDto).putHeaders("idd", "99").build());
 
             String responseBody = gResponse.getBody().toStringUtf8();
             return responseBody;
