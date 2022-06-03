@@ -25,9 +25,7 @@ public class GrpcClientService {
 
     public String grpcGetMethod() {
         channel =
-            // ManagedChannelBuilder.forTarget("localhost" + ":" + 9090).build();
-                NettyChannelBuilder.forAddress("localhost", 9090).negotiationType(NegotiationType.PLAINTEXT)
-                .build();
+            ManagedChannelBuilder.forTarget("static://localhost" + ":" + 9090).usePlaintext().build();
         stub = RestApiGrpc.newBlockingStub(channel);
 
         RequestDto requestDto = new RequestDto();
@@ -38,6 +36,7 @@ public class GrpcClientService {
             GResponse gResponse = stub.get(GRequest.newBuilder().setPath("examplePath").setBody(bytesRequestDto).putHeaders("idd", "99").build());
 
             String responseBody = gResponse.getBody().toStringUtf8();
+            System.err.println("8888888");
             return responseBody;
         } catch (IOException e) {
             return "fail";
